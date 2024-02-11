@@ -15,9 +15,6 @@ from sec_edgar_downloader import Downloader
 import os 
 from fastapi.staticfiles import StaticFiles
 
-# Set up Jinja2 templates
-templates = Jinja2Templates(directory="templates")
-
 # Initialize the Dash app
 dash_app = dash.Dash(__name__)
 
