@@ -1,0 +1,13 @@
+fastapi
+starlette
+pydantic
+dash
+dash-core-components
+dash-html-components
+yfinance
+pandas
+plotly
+numpy
+dash-extensions
+uvicorn
+sec-edgar-downloader
