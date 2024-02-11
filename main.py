@@ -325,11 +325,7 @@ async def read_items():
             <form action="/explanation" method="get">
                 <button type="submit">Strategy Explanation</button>
             </form>
-
-            <form action="/statements" method="get">
-                <button type="submit">Financial Statements</button>
-            </form>
-
+            
             <form action="/10k" method="get">
                 <button type="submit">10-K Report</button>
             </form>
@@ -435,40 +431,6 @@ async def get_explanation(request: Request):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/statements", response_class=HTMLResponse)
-async def get_statements(request: Request):
-    ticker = sqlite_ticker()
-    dash_app.layout['stock-input'].value = ticker
-    try:
-        # Construct the final HTML
-        html_content = '''
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>EMA Explanation</title>
-                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-                <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                    }
-                    p, li {
-                        font-size: 1rem;
-                    }
-                </style>
-            </head>
-            <body>
-
-            <h2>Financial Statements</h2>
-
-            </body>
-            </html>
-            '''
-        return HTMLResponse(content=html_content)
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-  
 @app.get("/10k", response_class=HTMLResponse)
 async def get_10k(request: Request):
     #forms = ["10-K","10-Q","8-K","DEF 14A","4","S-1","SC 13D","SC 13G","20-F","40-F"]
