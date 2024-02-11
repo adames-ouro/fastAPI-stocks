@@ -1,6 +1,6 @@
 # Stock Visualizer with EMA Indicators
 
-![Stock Image](stocks.png)
+![Stock Image](stock.png)
 
 This web application, built using FastAPI and Dash, provides an interactive platform to visualize stock data with Exponential Moving Average (EMA) indicators. Users can select a stock symbol, choose a time period, and specify short-term and long-term EMA windows to analyze the stock's performance and identify potential buy or sell signals based on EMA crossovers.
 
